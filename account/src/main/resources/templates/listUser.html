@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List User</title>
+</head>
+<body>
+<div>
+    <div class="col-md-8">User List</div>
+    <div class="col-md-2">
+        <a href="add_user" class="btn btn-primary">Add User</a>
+    </div>
+</div>
+<div>
+<c:if test="${!empty users}">
+    <div>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <tb>Id</tb>
+                <tb>User Name</tb>
+                <tb>Password</tb>
+                <tb>DOB</tb>
+                <tb>Email</tb>
+                <tb>Mobile</tb>
+                <tb>Gender</tb>
+                <tb>Nationality</tb>
+                <tb>Hobbies</tb>
+                <tb>Address</tb>
+                <tb>Comments</tb>
+                <tb>Actions</tb>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach item="${users}" var="user">
+                <tr>
+                    <td>${user.id}</td>
+                    <td>${user.username}</td>
+                    <td>${user.password}</td>
+                    <td>${user.dob}</td>
+                    <td>${user.email}</td>
+                    <td>${user.mobileNo}</td>
+                    <td>${user.gender}</td>
+                    <td>${user.nationality}</td>
+                    <td>${user.hobbies}</td>
+                    <td>${user.address}</td>
+                    <td>${user.comments}</td>
+                    <td><a href="edit_user?id=${user.id}">Edit</a>
+                        <a href="delete_user?id=${user.id}">Delete</a>
+                    </td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+    </div>
+</c:if>
+
+</div>
+</body>
+</html>

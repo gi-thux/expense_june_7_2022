@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Regestration Form</title>
+  <!--  <%@ include file="header.html" %>-->
+</head>
+<body>
+ <div class="container">
+    <div class="panel">
+        <div class="panel-default">
+            <div class="rows">
+                <div class="col-md-2"></div>
+                <div class="col-md-8 jumbotron">
+                    <form action="save_user" method="post" class="form-horizontal">
+                        <fieldset>
+                            <legend>User Form Registration</legend>
+                            <div class="form-group">
+                                <lebel>User Name</lebel>
+                                <input type="text" name="username" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <lebel>Password</lebel>
+                                <input type="text" name="password" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <lebel>DOB</lebel>
+                                <input type="text" name="DOB" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <lebel>Address</lebel>
+                                <input type="text" name="address" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <lebel>PhoneNo</lebel>
+                                <input type="text" name="phoneNo" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <lebel>Gender</lebel>
+                                <input type="radio" name="gender" value="Male">Male
+                                <input type="radio" name="gender" value="Male">Female
+                            </div>
+                            <div class="form-group">
+                                <lebel>Hobbies</lebel>
+                                <input type="checkbox" name="hobbies" value="reading" class="form-check">Reading
+                                <input type="checkbox" name="hobbies" value="writing" class="form-check">writing
+                                <input type="checkbox" name="hobbies" value="coding" class="form-check">Coding
+                            </div>
+                            <div class="form-group">
+                                <lebel>Nationality</lebel>
+                                <select name="nationality" class="form-control">
+                                    <option value="Nepalese">Nepalese</option>
+                                    <option value="American">American</option>
+                                    <option value="Indian">Indian</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Comments</label>
+                                <textarea rows="5" cols="20" name="comments" class="form-control"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Submit" class="btn btn-success">
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+    </div>
+</div>
+</body>
+</html>
