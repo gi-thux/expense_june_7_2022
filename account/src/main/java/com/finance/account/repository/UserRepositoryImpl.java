@@ -6,46 +6,46 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
 
 import javax.persistence.Query;
 import java.util.List;
 
 @Repository
-public class UserRepositoryImpl implements UserRepository{
-@Autowired
+public class UserRepositoryImpl implements UserRepository {
+    @Autowired
     private SessionFactory sessionFactory;
+
     @Override
     public void saveUser(User user) {
-        Session session= sessionFactory.getCurrentSession();
+        Session session = sessionFactory.getCurrentSession();
         session.save(user);
 
     }
 
     @Override
     public void updateUser(User user) {
-        Session session= sessionFactory.getCurrentSession();
+        Session session = sessionFactory.getCurrentSession();
         session.update(user);
     }
 
     @Override
     public void deleteUser(int id) {
-        Session session= sessionFactory.getCurrentSession();
-        User user=session.load(User.class,id);
-if(user!=null){
-    session.delete(user);
-}
+        Session session = sessionFactory.getCurrentSession();
+        User user = session.load(User.class, id);
+        if (user != null) {
+            session.delete(user);
+        }
     }
 
     @Override
     public User getUserById(int id) {
-        Session session= sessionFactory.getCurrentSession();
-        return session.get(User.class,id);
+        Session session = sessionFactory.getCurrentSession();
+        return session.get(User.class, id);
     }
 
     @Override
     public List<User> getAllUser() {
-        Session session= sessionFactory.getCurrentSession();
+        Session session = sessionFactory.getCurrentSession();
         Criteria criteria = session.createCriteria(User.class);
         return criteria.list();
     }

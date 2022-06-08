@@ -17,7 +17,7 @@ public class UserController {
 
     @GetMapping("/add_user")
     public String getUserForm() {
-        return "index";
+        return "createUser";
     }
 
     @PostMapping("/edit_user")

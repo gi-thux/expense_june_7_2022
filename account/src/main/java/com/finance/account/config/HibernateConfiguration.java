@@ -1,6 +1,7 @@
 package com.finance.account.config;
 
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.FactoryBean;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,6 +17,7 @@ import java.util.Properties;
 @Configuration
 @EnableTransactionManagement
 public class HibernateConfiguration {
+
     @Value("com.mysql.cj.jdbc.Driver")
     private  String DRIVER;
     @Value("jdbc:mysql://localhost:3306/account")
@@ -48,10 +50,10 @@ public class HibernateConfiguration {
         LocalSessionFactoryBean factoryBean = new LocalSessionFactoryBean();
         factoryBean.setDataSource(dataSource());
       factoryBean.setPackagesToScan(PACKAGE_TO_SCAN);
-        Properties prop = new Properties();
+        Properties prop= new Properties();
         prop.put("hibernate.dialect", HIBERNATE_DIALECT);
         prop.put("hibernate.hbm2ddl.auto",HBM2DDL);
-        prop.put("hibernate.show_sql", SHOW_SQL);
+       prop.put("hibernate.show_sql", SHOW_SQL);
         factoryBean.setHibernateProperties(prop);
         return factoryBean;
 

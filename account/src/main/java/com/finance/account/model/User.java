@@ -9,6 +9,7 @@ import java.util.Date;
 @Table(name="user_tbl")
 public class User {
     @Id
+      @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     @Column(name="user_name")
     private String username;
